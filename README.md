@@ -1,0 +1,2 @@
+# GameGenreGacha
+ゲームジャンルのガチャガチャ
