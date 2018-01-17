@@ -1,2 +1,2 @@
-# GameGenreGacha
+# game-genre-gacha
 ゲームジャンルのガチャガチャ
