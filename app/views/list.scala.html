@@ -1,0 +1,25 @@
+@import models._
+@(items: Seq[Jenres])
+
+@main("Welcome to Play") {
+<h1>Welcome to Play!</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>名前</th>
+            <th>説明文</th>
+        </tr>
+    </thead>
+    <tbody>
+        @items.map { jenre =>
+        <tr>
+            <td> @jenre.id </td>
+            <td> @jenre.name </td>
+            <td> @jenre.sentence </td>
+        </tr>
+    }
+</tbody>
+</table>
+}
