@@ -1,6 +1,6 @@
 # --- !Ups
 create table jenres (
-    id              bigint not null auto_increment,
+    id              INT not null auto_increment,
     name            char(64) not null,
     sentence        varchar(255) not null,
     PRIMARY KEY (id)

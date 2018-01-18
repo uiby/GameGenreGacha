@@ -15,16 +15,22 @@ class GachaService @Inject() (dbapi: DBApi) {
   private val db = dbapi.database("default");
 
   var JenresMapper = {
-    get[BigInt]("jenres.id")~
+    get[Int]("jenres.id")~
     get[String]("jenres.name")~
     get[String]("jenres.sentence") map {
       case id ~ name ~ sentence => Jenres(id, name, sentence)
     }
   }
 
-  def list(): Seq[Jenres] = {
+  def list: Seq[Jenres] = {
     db.withConnection { implicit connection =>
       SQL("""SELECT * FROM jenres""").as(JenresMapper *)
+    }
+  }
+
+  def pickupByRandom: Seq[Jenres] = {
+    db.withConnection { implicit connection =>
+      SQL("""SELECT * FROM jenres ORDER BY RAND() LIMIT 3""").as(JenresMapper *)
     }
   }
 }
